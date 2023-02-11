@@ -4,10 +4,14 @@
 </script>
 
 <ul
-	class={`transform transition duration-300 z-20 absolute menu flex flex-col justify-start items-center bg-gray-700 top-0 left-0 w-[50%] h-full pt-20 ${
+	class={`transform transition duration-300 z-20 absolute menu flex flex-col justify-start items-center bg-[#F8F0E2] top-0 left-0 w-[50%] h-full pt-20 ${
 		isMenuOpen ? 'translate-x-0' : '-translate-x-full'
 	}`}
 >
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<li class="menu__item m-2" on:click={() => (isMenuOpen = false)}>
+		<a class="menu__link  btn-link" href="/">home</a>
+	</li>
 	{#each toolsLinks as link}
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<li class="menu__item m-2" on:click={() => (isMenuOpen = false)}>
