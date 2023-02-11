@@ -59,6 +59,7 @@
 					navigator.clipboard.readText().then((text) => {
 						inputText = text;
 					});
+					saveOriginalText();
 				}}>Paste</button
 			>
 		</div>
