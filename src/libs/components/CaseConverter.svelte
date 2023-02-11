@@ -1,4 +1,5 @@
 <script>
+	import Copy from './Copy.svelte';
 	let inputText = '';
 	let orignalText = '';
 	function toCamelCase(str) {
@@ -40,87 +41,74 @@
 	function toOriginalCase() {
 		inputText = orignalText;
 	}
-
-	function copyToClipboard() {
-		navigator.clipboard.writeText(inputText);
-	}
 </script>
 
 <div class="flex flex-col items-center justify-center w-full">
-	<div class="flex flex-col items-start w-full">
-		<p class="mb-4">Enter your text below:</p>
+	<div class="flex flex-col items-center w-full">
 		<textarea
-			class="w-full h-32 p-2 border border-gray-300 rounded"
+			class="w-full mb-1 h-48 p-2 border-gray-300 border-b-4 resize-none rounded focus:outline-none focus:border-gray-400"
 			placeholder="Enter your text here..."
 			bind:value={inputText}
 			on:input={saveOriginalText}
 		/>
-		<div class="flex flex-col items-start w-full ">
-			<p>
-				Choose your case type: <span class="font-italic text-xs text-gray-500"
-					>(automatically copied to clipboard)
-				</span>
-			</p>
+		<div class="flex w-full flex-start">
+			<Copy text={inputText} />
+		</div>
+		<div class="flex flex-col items-center w-full">
+			<p class="mb-2">Choose your case type:</p>
 			<div>
 				<button
-					class="btn-case"
+					class="btn-blue"
 					on:click={() => {
 						toOriginalCase();
-						copyToClipboard();
 					}}
 				>
 					Original
 				</button>
 				<button
-					class="btn-case"
+					class="btn-blue"
 					on:click={() => {
 						inputText = inputText.toLowerCase();
-						copyToClipboard();
 					}}
 				>
 					lowercase
 				</button>
 				<button
-					class="btn-case"
+					class="btn-blue"
 					on:click={() => {
 						inputText = inputText.toUpperCase();
-						copyToClipboard();
 					}}
 				>
 					UPPERCASE
 				</button>
 				<button
-					class="btn-case"
+					class="btn-blue"
 					on:click={() => {
 						inputText = toCamelCase(inputText);
-						copyToClipboard();
 					}}
 				>
 					camelCase
 				</button>
 				<button
-					class="btn-case"
+					class="btn-blue"
 					on:click={() => {
 						inputText = toPascalCase(inputText);
-						copyToClipboard();
 					}}
 				>
 					PascalCase
 				</button>
 				<button
-					class="btn-case"
+					class="btn-blue"
 					on:click={() => {
 						inputText = toSnakeCase(inputText);
-						copyToClipboard();
 					}}
 				>
 					snake_case
 				</button>
 				<button
-					class="btn-case"
+					class="btn-blue"
 					on:click={() => {
 						inputText = toKebabCase(inputText);
-						copyToClipboard();
 					}}
 				>
 					kebab-case

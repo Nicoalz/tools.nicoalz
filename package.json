@@ -27,5 +27,9 @@
 		"vite": "^4.0.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"qrcode-generator": "^1.4.4",
+		"svelte-icons": "^2.1.0"
+	}
 }

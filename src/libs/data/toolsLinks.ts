@@ -1,10 +1,14 @@
 export const toolsLinks = [
 	{
-		name: 'home',
-		path: '/'
-	},
-	{
 		name: 'case converter',
 		path: '/case-converter'
+	},
+	{
+		name: 'password generator',
+		path: '/password-generator'
+	},
+	{
+		name: 'qr code generator',
+		path: '/qr-code-generator'
 	}
 ];
