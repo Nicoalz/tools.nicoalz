@@ -51,8 +51,16 @@
 			bind:value={inputText}
 			on:input={saveOriginalText}
 		/>
-		<div class="flex w-full flex-start">
+		<div class="flex w-full flex-start items-center">
 			<Copy text={inputText} />
+			<button
+				class="btn-violet text-xs"
+				on:click={() => {
+					navigator.clipboard.readText().then((text) => {
+						inputText = text;
+					});
+				}}>Paste</button
+			>
 		</div>
 		<div class="flex flex-col items-center w-full">
 			<p class="mb-2">Choose your case type:</p>

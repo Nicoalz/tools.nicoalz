@@ -52,7 +52,7 @@
 			</button>
 			<p>{generatedPassword || 'Choose at least one option'}</p>
 		</div>
-		<div class="flex w-full justify-start">
+		<div class="flex w-full justify-start items-center">
 			<Copy text={generatedPassword} />
 		</div>
 		<div class="flex flex-col items-center w-full ">

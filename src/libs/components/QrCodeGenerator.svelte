@@ -27,7 +27,6 @@
 			<button
 				class="btn-violet text-xs"
 				on:click={() => {
-					// paste from clipboard
 					navigator.clipboard.readText().then((text) => {
 						inputText = text;
 					});
