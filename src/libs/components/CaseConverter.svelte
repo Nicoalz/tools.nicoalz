@@ -58,8 +58,8 @@
 				on:click={() => {
 					navigator.clipboard.readText().then((text) => {
 						inputText = text;
+						orignalText = text;
 					});
-					saveOriginalText();
 				}}>Paste</button
 			>
 		</div>
